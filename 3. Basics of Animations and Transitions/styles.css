@@ -1,35 +1,80 @@
-
 .box {
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
 }
 
 /* Todo 3.0: Create an animation that increases and decreases the scale of the box  */
-.todo-0-container .box{
-    /* Apply animation here */
+.todo-0-container .box {
+  /* Apply animation here */
+  animation: bob 1s ease infinite;
+}
+
+@keyframes bob {
+  0% {
+    scale: 100%;
+  }
+  50% {
+    scale: 150%;
+  }
+  100% {
+    scale: 100%;
+  }
 }
 
 /* Todo 3.1: Create an animation that moves the box left and right.
 Start with using "from" and "to". Now use "0%" and "100%" as your key frames.
 Set more key frames between 0% and 100%. */
-.todo-1-container .box{
-    /* Apply animation here */
+.todo-1-container .box {
+  /* Apply animation here */
+  animation: right 1s linear infinite;
+}
+
+@keyframes right {
+  from {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
 }
 
 /* Todo 3.2: Try the different timing funcitons such as linear, ease-in, ease-in-out, cubic-bezier, and steps*/
-.todo-2-container .box{
-    /* Apply animation here */
+.todo-2-container .box {
+  /* Apply animation here */
+  animation: RL 2s ease-in-out infinite;
+}
+
+@keyframes RL {
+  from {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
 }
 
 /* Todo 3.3: Create a transition that will raise the button up and will make it cast a shadow when you hover over the button */
 /* bonus: apply the transition on the box shadow with different duration and timing function. This should all be in one line*/
-.todo-3-container button{
-    /* Apply transition here */
+.todo-3-container button {
+  /* Apply transition here */
+  transition: box-shadow 500ms linear;
+  transform: transform 500ms linear;
+}
+
+.todo-3-container button:hover {
+  box-shadow: 12px 8px 4px;
+  transform: translateY(-15px);
 }
